@@ -5,9 +5,7 @@ const path = require('path');
 const myPath = path.join(__dirname, '../ServiceKey.json');
 
 var admin = require('firebase-admin');
-var appp = admin.initializeApp({
-    credential: admin.credential.cert(myPath)
-});
+var appp = admin.initializeApp();
 const db = appp.firestore();
 let defaultAuth = admin.auth();
 
