@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-
-const myPath = path.join(__dirname, '../ServiceKey.json');
 
 var admin = require('firebase-admin');
-var appp = admin.initializeApp();
+var appp = admin.initializeApp(process.env.CUSTOMCONNSTR_MY_SECREATE_KEY);
 const db = appp.firestore();
 let defaultAuth = admin.auth();
 
